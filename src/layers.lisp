@@ -1,14 +1,17 @@
-(defpackage headers
-  (:use :cl)
-  (:export :*ethernet-header* :*ipv4-header))
-(in-package :headers)
+(defpackage layers
+  (:use :cl :bsl)
+  (:export :ethernet :ipv4))
+(in-package :layers)
 
-(defvar *ethernet-header*
+(defmacro deflayer (name fields)
+  `(defvar ,name (bsl:parse-binary-struct ,fields)))
+
+(deflayer ethernet
   '((destination 48)
     (source 48)
     (type 16)))
     
-(defvar *ipv4-header*
+(deflayer ipv4
   '((version 4)
     (ihl 4)
     (dscp 4)
