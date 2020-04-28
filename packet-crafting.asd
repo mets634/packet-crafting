@@ -2,7 +2,7 @@
   :version "0.1.0"
   :author "mets634 <mets634@gmail.com>"
   :license "MIT"
-  :depends-on ()
+  :depends-on (:lisp-binary)
   :components ((:module "src"
                 :components
                 ((:file "bsl")

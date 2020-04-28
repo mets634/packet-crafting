@@ -1,4 +1,5 @@
 *~
+buildapp
 *.FASL
 *.fasl
 *.lisp-temp

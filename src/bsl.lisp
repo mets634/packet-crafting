@@ -14,6 +14,8 @@
 ;;;                        a byte. Meaning, there can be no field that starts in one byte and ends in a different one.
 ;;;         DEFAULT_VALUE - The default value of this field. If NIL, default value will not be allowed.
 
+;;; BSL field extraction functions
+
 (defun name (field)
   (first field))
 
@@ -26,7 +28,12 @@
 (defun field (bsl field-name)
   (assoc field-name bsl))
 
+;;; Network-layer creation using BSL
+
 (defmacro deflayer (name &rest fields)
+  "Creates a binary-structure (lisp-binary:defbinary)
+  representing a network-layer with the specified fields."
+  
   `(lisp-binary:defbinary ,name (:byte-order :big-endian) ; network-byte-order = big-endian
      ,@(mapcar
 	#'(lambda (field) `(,(name field) ,(value field) :type ,(size field)))
