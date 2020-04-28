@@ -1,5 +1,8 @@
 (defpackage packet-crafting
-  (:use :cl))
+  (:use :cl :layers)
+  (:export main))
 (in-package :packet-crafting)
 
-;; blah blah blah.
+(defun main (argv)
+  (describe 'ethernet)
+  (describe 'ipv4))

@@ -1,12 +1,12 @@
 (defsystem "packet-crafting"
   :version "0.1.0"
-  :author "Andrey Hunter <mets634@gmail.com>"
+  :author "mets634 <mets634@gmail.com>"
   :license "MIT"
-  :depends-on ()
+  :depends-on (:lisp-binary)
   :components ((:module "src"
                 :components
                 ((:file "bsl")
-		 (:file "headers")
+		 (:file "layers")
 		 (:file "main"))))
   :description "A library to craft network packets."
   :in-order-to ((test-op (test-op "packet-crafting/tests"))))
