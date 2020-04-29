@@ -1,9 +1,13 @@
+;;;; Defines the network layers
+
 (defpackage layers
   (:use :cl :bsl)
   (:export :ethernet :ipv4))
 (in-package :layers)
 
-(deflayer ethernet
+;;; Network layers are defined using BSL
+
+(deflayer ethernet-II
   (destination 48)
   (source 48)
   (type 16))
@@ -21,3 +25,5 @@
   (header-checksum 16)
   (source-address 32)
   (destination-address 32))
+
+;;; TODO: Add raw data layer
