@@ -2,7 +2,7 @@
 
 (defpackage bsl
   (:use :cl :lisp-binary)
-  (:export deflayer))
+  (:export deflayer print-field))
 (in-package :bsl)
 
 ;;; BSL: Binary Struct Language
@@ -27,9 +27,6 @@
 
 (defun field (bsl field-name)
   (assoc field-name bsl))
-
-(defun print-field (field &optional (stream t))
-  (format stream "~a = ~a~%" (name field) (value field)))
 
 ;;; Network-layer creation using BSL
 

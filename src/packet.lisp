@@ -2,7 +2,7 @@
 
 (defpackage packet
   (:use :cl :layers)
-  (:export :TODO))
+  (:export make-packet add-layer get-layer show))
 (in-package :packet)
 
 ;;; A packet is just an array of layers,
@@ -13,20 +13,15 @@
 
 (defconstant +default-packet-size+ 5)
 
-(deftype packet (&optional (size +default-packet-size))
-  "Defines a packet as an adjustible vector."
-  
-  `(make-array ,size :fill-pointer 0 :adjustable t))
+(defun make-packet (&optional (size +default-packet-size+))
+  (make-array size :fill-pointer 0 :adjustable t))
 
-(declaim (ftype (function (packet T) add-layer)))
 (defun add-layer (packet  new-layer)
   (vector-push-extend new-layer packet))
 
-(declaim (ftype (function (packet T) get-layer)))
 (defun get-layer (packet index)
-  (elf packet index))
+  (elt packet index))
 
-(Declaim (ftype (packet) show))
 (defun show (packet &optional (stream t))
-  (loop for layer in packet do
-    (format stream "~a~%" layer)))
+  (loop for layer across packet do
+    (format t "~a~%" layer)))

@@ -2,7 +2,7 @@
 
 (defpackage layers
   (:use :cl :bsl)
-  (:export :ethernet :ipv4))
+  (:export make-ethernet-II make-ipv4))
 (in-package :layers)
 
 ;;; Network layers are defined using BSL
