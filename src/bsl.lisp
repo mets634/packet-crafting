@@ -2,7 +2,7 @@
 
 (defpackage bsl
   (:use :cl :lisp-binary)
-  (:export deflayer print-field))
+  (:export deflayer ))
 (in-package :bsl)
 
 ;;; BSL: Binary Struct Language
