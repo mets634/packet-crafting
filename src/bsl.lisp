@@ -1,4 +1,4 @@
-;;;; Creates a BSL parser
+;;;; Implements a BSL->struct parser
 
 (defpackage bsl
   (:use :cl :lisp-binary)

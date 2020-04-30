@@ -7,6 +7,7 @@
                 :components
                 ((:file "bsl")
 		 (:file "layers")
+		 (:file "packet")
 		 (:file "main"))))
   :description "A library to craft network packets."
   :in-order-to ((test-op (test-op "packet-crafting/tests"))))
