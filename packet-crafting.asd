@@ -13,8 +13,8 @@
   :in-order-to ((test-op (test-op "packet-crafting/tests"))))
 
 (defsystem "packet-crafting/tests"
-  :author "Andrey Hunter <mets634@gmail.com>"
-  :license ""
+  :author "mets634 <mets634@gmail.com>"
+  :license "MIT"
   :depends-on ("packet-crafting"
                "rove")
   :components ((:module "tests"
