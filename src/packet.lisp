@@ -37,7 +37,3 @@
   
   (loop for layer across packet do
     (format t "~a~%" layer)))
-
-(defun serialize (packet &optional (stream t))
-  (loop for layer across packet do
-    (

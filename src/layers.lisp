@@ -25,5 +25,3 @@
   (header-checksum 16)
   (source-address 32)
   (destination-address 32))
-
-;;; TODO: Add raw data layer
