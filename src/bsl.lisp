@@ -34,7 +34,7 @@
   "Creates a binary-structure (lisp-binary:defbinary)
   representing a network-layer with the specified fields."
   
-  `(lisp-binary:defbinary ,name (:byte-order :big-endian) ; network-byte-order = big-endian
+  `(lisp-binary:defbinary ,name ()
      ,@(mapcar
 	#'(lambda (field) `(,(name field) ,(value field) :type ,(size field)))
 	fields)))
